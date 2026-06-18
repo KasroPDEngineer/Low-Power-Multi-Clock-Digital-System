@@ -1,0 +1,12 @@
+# Version:1.0 MMMC View Definition File
+# Do Not Remove Above Line
+create_rc_corner -name typical -cap_table {../pdk_files/captable/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl} -preRoute_res {1.0} -preRoute_cap {1.0} -preRoute_clkres {0.0} -preRoute_clkcap {0.0} -postRoute_res {1.0} -postRoute_cap {1.0} -postRoute_xcap {1.0} -postRoute_clkres {0.0} -postRoute_clkcap {0.0} -qx_tech_file {../pdk_files/QRC_Tech/gpdk045.tch}
+create_op_cond -name worst -library_file {../pdk_files/lib/slow_vdd1v0_basicCells.lib} -P {10.0} -V {10.0} -T {10.0}
+create_op_cond -name best -library_file {../pdk_files/lib/fast_vdd1v0_basicCells.lib} -P {10.0} -V {10.0} -T {10.0}
+create_library_set -name slow -timing {../pdk_files/lib/slow_vdd1v0_basicCells.lib}
+create_library_set -name fast -timing {../pdk_files/lib/fast_vdd1v0_basicCells.lib}
+create_constraint_mode -name sdc_test -sdc_files {../synth/outputs/multi_clk_sdc.sdc}
+create_delay_corner -name rc_typ -rc_corner {typical} -early_library_set {fast} -late_library_set {slow}
+create_analysis_view -name test_setup -constraint_mode {sdc_test} -delay_corner {rc_typ}
+create_analysis_view -name test_hold -constraint_mode {sdc_test} -delay_corner {rc_typ}
+set_analysis_view -setup {test_setup} -hold {test_hold}

@@ -1,0 +1,640 @@
+
+
+// Path 1
+Endpoint:      U1_RST_SYNC_RST_reg_reg[0]/RN
+Beginpoint:    RST_N
+Analysis View: test_hold
+Hold Slack:    -397.3ps
+
+Node: U1_RST_SYNC_RST_reg_reg[0]/RN
+Net:  FE_PHN1325_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      NoCellSelected(2)
+    ECO Safe Resize
+      TooBigToFixByResize
+Node: ctsFE_PHC1325_RST_N/Y
+Net:  FE_PHN1325_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(20)
+    ResizeLegal
+      NoCellSelected(2), HoldSlackDegraded(18), LocalSetupWNSDegradation(4)
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1325_RST_N/A
+Net:  FE_PHN1422_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      HoldSlackDegraded
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1422_RST_N/Y
+Net:  FE_PHN1422_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      NoCellSelected(2), HoldSlackDegraded(24), LocalSetupWNSDegradation(2)
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1422_RST_N/A
+Net:  FE_PHN1492_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      HoldSlackDegraded
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1492_RST_N/Y
+Net:  FE_PHN1492_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      NoLegalLoc(4), NoCellSelected(2), HoldSlackDegraded(24)
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1492_RST_N/A
+Net:  FE_PHN1520_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      HoldSlackDegraded
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1520_RST_N/Y
+Net:  FE_PHN1520_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      NoCellSelected(2), HoldSlackDegraded(24), LocalSetupWNSDegradation(2)
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1520_RST_N/A
+Net:  FE_PHN1523_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      HoldSlackDegraded
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1523_RST_N/Y
+Net:  FE_PHN1523_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(20)
+    ResizeLegal
+      NoCellSelected(2), HoldSlackDegraded(24), LocalSetupWNSDegradation(2)
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1523_RST_N/A
+Net:  FE_PHN1525_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      HoldSlackDegraded
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1525_RST_N/Y
+Net:  FE_PHN1525_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      NoCellSelected(2), HoldSlackDegraded(24), LocalSetupWNSDegradation(2)
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1525_RST_N/A
+Net:  FE_PHN1527_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      HoldSlackDegraded
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1527_RST_N/Y
+Net:  FE_PHN1527_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      NoCellSelected(2), HoldSlackDegraded(26)
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1527_RST_N/A
+Net:  FE_PHN1529_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      HoldSlackDegraded
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1529_RST_N/Y
+Net:  FE_PHN1529_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(20)
+    ResizeLegal
+      NoCellSelected(2), HoldSlackDegraded(12), LocalSetupWNSDegradation(4)
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1529_RST_N/A
+Net:  FE_PHN1530_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      HoldSlackDegraded
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1530_RST_N/Y
+Net:  FE_PHN1530_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(20)
+    ResizeLegal
+      NoCellSelected(2), HoldSlackDegraded(24), LocalSetupWNSDegradation(2)
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1530_RST_N/A
+Net:  FE_PHN1549_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      HoldSlackDegraded
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1549_RST_N/Y
+Net:  FE_PHN1549_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      NoCellSelected(2), HoldSlackDegraded(20), LocalSetupWNSDegradation(6)
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1549_RST_N/A
+Net:  FE_PHN1542_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      HoldSlackDegraded
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1542_RST_N/Y
+Net:  FE_PHN1542_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(20)
+    ResizeLegal
+      NoCellSelected(2), HoldSlackDegraded(10), LocalSetupWNSDegradation(4)
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1542_RST_N/A
+Net:  FE_PHN1532_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      HoldSlackDegraded
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1532_RST_N/Y
+Net:  FE_PHN1532_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      NoCellSelected(2), HoldSlackDegraded(14), LocalSetupWNSDegradation(4)
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1532_RST_N/A
+Net:  FE_PHN1534_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      HoldSlackDegraded
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1534_RST_N/Y
+Net:  FE_PHN1534_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      NoCellSelected(2), HoldSlackDegraded(10), LocalSetupWNSDegradation(4)
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1534_RST_N/A
+Net:  RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      FTermNode
+    ECO Safe Resize
+      FTermNode
+Node: RST_N
+Net:  RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation
+    ResizeLegal
+      FTermNode
+    ECO Safe Resize
+      FTermNode
+
+
+// Path 2
+Endpoint:      U1_RST_SYNC_RST_reg_reg[1]/RN
+Beginpoint:    RST_N
+Analysis View: test_hold
+Hold Slack:    -397.3ps
+
+Node: U1_RST_SYNC_RST_reg_reg[1]/RN
+Net:  FE_PHN1325_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      NoCellSelected(2)
+    ECO Safe Resize
+      TooBigToFixByResize
+Node: ctsFE_PHC1325_RST_N/Y
+Net:  FE_PHN1325_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(20)
+    ResizeLegal
+      NoCellSelected(2), HoldSlackDegraded(18), LocalSetupWNSDegradation(4)
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1325_RST_N/A
+Net:  FE_PHN1422_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      HoldSlackDegraded
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1422_RST_N/Y
+Net:  FE_PHN1422_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      NoCellSelected(2), HoldSlackDegraded(24), LocalSetupWNSDegradation(2)
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1422_RST_N/A
+Net:  FE_PHN1492_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      HoldSlackDegraded
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1492_RST_N/Y
+Net:  FE_PHN1492_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      NoLegalLoc(4), NoCellSelected(2), HoldSlackDegraded(24)
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1492_RST_N/A
+Net:  FE_PHN1520_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      HoldSlackDegraded
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1520_RST_N/Y
+Net:  FE_PHN1520_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      NoCellSelected(2), HoldSlackDegraded(24), LocalSetupWNSDegradation(2)
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1520_RST_N/A
+Net:  FE_PHN1523_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      HoldSlackDegraded
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1523_RST_N/Y
+Net:  FE_PHN1523_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(20)
+    ResizeLegal
+      NoCellSelected(2), HoldSlackDegraded(24), LocalSetupWNSDegradation(2)
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1523_RST_N/A
+Net:  FE_PHN1525_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      HoldSlackDegraded
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1525_RST_N/Y
+Net:  FE_PHN1525_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      NoCellSelected(2), HoldSlackDegraded(24), LocalSetupWNSDegradation(2)
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1525_RST_N/A
+Net:  FE_PHN1527_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      HoldSlackDegraded
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1527_RST_N/Y
+Net:  FE_PHN1527_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      NoCellSelected(2), HoldSlackDegraded(26)
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1527_RST_N/A
+Net:  FE_PHN1529_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      HoldSlackDegraded
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1529_RST_N/Y
+Net:  FE_PHN1529_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(20)
+    ResizeLegal
+      NoCellSelected(2), HoldSlackDegraded(12), LocalSetupWNSDegradation(4)
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1529_RST_N/A
+Net:  FE_PHN1530_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      HoldSlackDegraded
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1530_RST_N/Y
+Net:  FE_PHN1530_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(20)
+    ResizeLegal
+      NoCellSelected(2), HoldSlackDegraded(24), LocalSetupWNSDegradation(2)
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1530_RST_N/A
+Net:  FE_PHN1549_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      HoldSlackDegraded
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1549_RST_N/Y
+Net:  FE_PHN1549_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      NoCellSelected(2), HoldSlackDegraded(20), LocalSetupWNSDegradation(6)
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1549_RST_N/A
+Net:  FE_PHN1542_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      HoldSlackDegraded
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1542_RST_N/Y
+Net:  FE_PHN1542_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(20)
+    ResizeLegal
+      NoCellSelected(2), HoldSlackDegraded(10), LocalSetupWNSDegradation(4)
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1542_RST_N/A
+Net:  FE_PHN1532_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      HoldSlackDegraded
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1532_RST_N/Y
+Net:  FE_PHN1532_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      NoCellSelected(2), HoldSlackDegraded(14), LocalSetupWNSDegradation(4)
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1532_RST_N/A
+Net:  FE_PHN1534_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      HoldSlackDegraded
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1534_RST_N/Y
+Net:  FE_PHN1534_RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      NoCellSelected(2), HoldSlackDegraded(10), LocalSetupWNSDegradation(4)
+    ECO Safe Resize
+      DisabledByOption
+Node: ctsFE_PHC1534_RST_N/A
+Net:  RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation(10)
+    ResizeLegal
+      FTermNode
+    ECO Safe Resize
+      FTermNode
+Node: RST_N
+Net:  RST_N
+  Setup Slack:   19.1ps
+  Analysis View: test_setup
+  Failed Reason:
+    LegalSingleBuffer
+      LocalSetupWNSDegradation
+    ResizeLegal
+      FTermNode
+    ECO Safe Resize
+      FTermNode
+
+
+// Path 3
+Endpoint:      U0_CLK_GATE/g17__2398/B
+Analysis View: test_hold
+Hold Slack:    -68.8ps
+
+  Failed Reason: no timing path found due to clock net.

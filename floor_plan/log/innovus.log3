@@ -1,0 +1,767 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.18-s099_1, built Tue Jul 18 13:03:50 PDT 2023
+Options:	-log log/ 
+Date:		Tue Jun 16 11:55:50 2026
+Host:		vlsi (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (10cores*40cpus*Intel(R) Xeon(R) Silver 4210 CPU @ 2.20GHz 14080KB)
+OS:		Red Hat Enterprise Linux Server 7.9 (Maipo)
+
+License:
+		[11:55:50.389513] Configured Lic search path (21.01-s002): 5280@vlsi
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (127 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> getVersion
+<CMD> define_proc_arguments ViaFillQor -info {This procedure extracts Viafill details from innovus db} -define_args {
+		{-window "window coordinates" "" list optional}
+		{-window_size "window size in microns" "" string optional}
+	
+	}
+[INFO] Loading Pegasus 22.20 fill procedures
+<CMD> define_proc_arguments ProcessFills -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+				{-csvName "File path for Fill Data csv file" "Path of CSV file" string required}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list required}
+    {-output_data "Boolean Flag to output Fill Data for further processing" "" string required}
+}
+<CMD> define_proc_arguments FillQor -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list optional}
+				{-outData "Boolean Flag to output Fill Data for further processing" "" boolean optional}
+    {-outDataFile "File path for Fill Data csv file" "Path of CSV file" string optional}
+}
+<CMD> define_proc_arguments ProcessFills_fast -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+				{-csvName "File path for Fill Data csv file" "Path of CSV file" string required}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list required}
+    {-output_data "Boolean Flag to output Fill Data for further processing" "" string required}
+}
+<CMD> define_proc_arguments FillQor_fast -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+				{-selectFill "type of fill to be selected in session" "list of BRIDGE/EXTENSION/STAMP/FLOATING" list optional}
+				{-outData "Boolean Flag to output Fill Data for further processing" "" boolean optional}
+    {-outDataFile "File path for Fill Data csv file" "Path of CSV file" string optional}
+}
+<CMD> define_proc_arguments ProcessFills_fast_stampOnly -info {This procedure processes Fill types} -define_args {
+    {-fillInfo "Design Fill data" "" list required}
+	
+}
+<CMD> define_proc_arguments FillQor_fast_stampOnly -info {This procedure extracts fill details from innovus db} -define_args {
+    {-layers "Fills Cleanup on which all layers" "list of Metal/Routing layers" list optional}
+}
+<CMD> win
+<CMD> restoreDesign saved_design/final_fix_drv_timing.inn.dat/ SYS_TOP
+#% Begin load design ... (date=06/16 11:58:33, mem=752.3M)
+INFO: You have enabled new technology 'legacy_fects_final_release' that has been internally qualified at Cadence but has only limited customer testing. You are encouraged to work with Cadence directly to qualify your usage and make sure it meets your needs before deploying it widely. Final production licensing of this feature is subject to change.
+Loading design 'SYS_TOP' saved by 'Innovus' '21.18-s099_1' on 'Tue Jun 16 05:03:26 2026'.
+% Begin Load MMMC data ... (date=06/16 11:58:34, mem=756.6M)
+% End Load MMMC data ... (date=06/16 11:58:34, total cpu=0:00:00.0, real=0:00:00.0, peak res=756.9M, current mem=756.9M)
+typical
+
+Loading LEF file /home/user_74/projects/new_fp/floor_plan/saved_design/final_fix_drv_timing.inn.dat/libs/lef/gsclib045_tech.lef ...
+
+Loading LEF file /home/user_74/projects/new_fp/floor_plan/saved_design/final_fix_drv_timing.inn.dat/libs/lef/gsclib045_macro.lef ...
+Set DBUPerIGU to M2 pitch 400.
+**WARN: (IMPLF-200):	Pin 'A' in macro 'ANTENNA' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+Loading view definition file from /home/user_74/projects/new_fp/floor_plan/saved_design/final_fix_drv_timing.inn.dat/viewDefinition.tcl
+Reading slow timing library '/home/user_74/projects/new_fp/pdk_files/lib/slow_vdd1v0_basicCells.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/user_74/projects/new_fp/pdk_files/lib/slow_vdd1v0_basicCells.lib)
+Read 480 cells in library 'slow_vdd1v0' 
+Reading fast timing library '/home/user_74/projects/new_fp/pdk_files/lib/fast_vdd1v0_basicCells.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/user_74/projects/new_fp/pdk_files/lib/fast_vdd1v0_basicCells.lib)
+Read 480 cells in library 'fast_vdd1v0' 
+Starting consistency checks on late and early library sets of delay corner 'rc_typ'
+late library set: slow
+early library set: fast
+Completed consistency checks. Status: Successful
+*** End library_loading (cpu=0.02min, real=0.02min, mem=23.9M, fe_cpu=0.80min, fe_real=2.75min, fe_mem=1041.4M) ***
+% Begin Load netlist data ... (date=06/16 11:58:35, mem=777.8M)
+*** Begin netlist parsing (mem=1041.4M) ***
+Created 480 new cells from 2 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilogBinary netlist '/home/user_74/projects/new_fp/floor_plan/saved_design/final_fix_drv_timing.inn.dat/SYS_TOP.v.bin'
+
+*** Memory Usage v#1 (Current mem = 1047.438M, initial mem = 478.109M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=1047.4M) ***
+% End Load netlist data ... (date=06/16 11:58:35, total cpu=0:00:00.0, real=0:00:00.0, peak res=787.5M, current mem=787.5M)
+Top level cell is SYS_TOP.
+Starting consistency checks on late and early library sets of delay corner 'rc_typ'
+late library set: slow
+early library set: fast
+Completed consistency checks. Status: Successful
+Starting consistency checks on late and early library sets of delay corner 'rc_typ'
+late library set: slow
+early library set: fast
+Completed consistency checks. Status: Successful
+Hooked 960 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell SYS_TOP ...
+*** Netlist is unique.
+** info: there are 1057 modules.
+** info: there are 2228 stdCell insts.
+
+*** Memory Usage v#1 (Current mem = 1098.863M, initial mem = 478.109M) ***
+*info: set bottom ioPad orient R0
+**WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Start create_tracks
+Set Shrink Factor to 0.90000
+Loading preference file /home/user_74/projects/new_fp/floor_plan/saved_design/final_fix_drv_timing.inn.dat/gui.pref.tcl ...
+##  Process: 45            (User Set)               
+##     Node: (not set)                           
+
+##  Check design process and node:  
+##  Design tech node is not set.
+
+Applying the recommended capacitance filtering threshold values for 45nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.1.
+	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+	Capacitance filtering mode(-capFilterMode option of the setExtractRCMode) is 'relAndCoup' for all engines.
+	The accuracy mode for postRoute effortLevel low extraction will be set to 'high'.
+	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode will be 'medium' if Quantus QRC technology file is specified else 'low'.
+Slack adjustment of -0 applied on <default> path group
+**WARN: (IMPOPT-3602):	The specified path group name reg2reg is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <high> specified for reg2reg path_group
+Slack adjustment of -0 applied on reg2reg path_group
+**WARN: (IMPOPT-3602):	The specified path group name reg2out is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <high> specified for reg2out path_group
+Slack adjustment of 0 applied on reg2out path_group
+**WARN: (IMPOPT-3602):	The specified path group name in2reg is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <high> specified for in2reg path_group
+Slack adjustment of 0 applied on in2reg path_group
+**WARN: (IMPOPT-3602):	The specified path group name in2out is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <high> specified for in2out path_group
+Slack adjustment of -0 applied on in2out path_group
+**WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+**WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+**WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+**WARN: (IMPTCM-77):	Option "-drouteStartIteration" for command setNanoRouteMode is obsolete and will be removed in a future release. The obsolete option still works in this release but to avoid this warning and to ensure compatibility with future releases, remove the obsolete option from your script.
+#WARNING (NRIF-91) Option setNanoRouteMode -routeTopRoutingLayer is obsolete. It will continue to work for the current release. To ensure compatibility with future releases, use option setDesignMode -topRoutingLayer instead.
+**WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+**WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+**WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+AAE_INFO: switching -siAware from false to true ...
+AAE_INFO: The setting is changed from false to true in setDelayCalMode -SIAware
+**WARN: (IMPPTN-867):	Found use of setPinAssignMode -maxLayer. This will continue to work in this release; however, it is recommended to use setDesignMode -topRoutingLayer instead.
+**WARN: (IMPPTN-867):	Found use of setPinAssignMode -maxLayer. This will continue to work in this release; however, it is recommended to use setDesignMode -topRoutingLayer instead.
+addRing command will ignore shorts while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will consider rows while creating rings.
+The ring targets are set to core/block ring wires.
+addStripe will allow jog to connect padcore ring and block ring.
+
+Stripes will not extend to closest target.
+When breaking rings, the power planner will consider the existence of blocks.
+addStripe will break automatically at non-default domains when generating global stripes over the core area or default domain.
+The entire stripe set will break at the domain if one of the nets is not in the domain.
+Stripes will not be created over regions without power planning wires.
+Offset for stripe breaking is set to 0.
+Stripes will stop at the boundary of the specified area.
+The power planner will set stripe antenna targets to none (no trimming allowed).
+**WARN: (IMPPSP-1003):	Found use of 'setRouteMode -earlyGlobalMaxRouteLayer'. This will continue to work in this release; however, it is recommended to use 'setDesignMode -topRoutingLayer' instead.
+**WARN: (IMPPSP-1003):	Found use of 'setRouteMode -earlyGlobalMinRouteLayer'. This will continue to work in this release; however, it is recommended to use 'setDesignMode -bottomRoutingLayer' instead.
+Change floorplan default-technical-site to 'CoreSite'.
+*Info: initialize multi-corner CTS.
+Total number of combinational cells: 318
+Total number of sequential cells: 152
+Total number of tristate cells: 10
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+Total number of physical cells: 0
+List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 CLKBUFX2 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+Total number of usable buffers: 16
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX4 CLKINVX3 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+Total number of usable inverters: 19
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+Total number of identified usable delay cells: 8
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+% Begin Load MMMC data post ... (date=06/16 11:58:38, mem=1088.5M)
+% End Load MMMC data post ... (date=06/16 11:58:38, total cpu=0:00:00.0, real=0:00:00.0, peak res=1088.5M, current mem=1088.5M)
+Reading floorplan file - /home/user_74/projects/new_fp/floor_plan/saved_design/final_fix_drv_timing.inn.dat/SYS_TOP.fp.gz (mem = 1359.4M).
+% Begin Load floorplan data ... (date=06/16 11:58:38, mem=1088.6M)
+*info: reset 2351 existing net BottomPreferredLayer and AvoidDetour
+Deleting old partition specification.
+Set FPlanBox to (0 0 241200 239400)
+**WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Start create_tracks
+ ... processed partition successfully.
+Reading binary special route file /home/user_74/projects/new_fp/floor_plan/saved_design/final_fix_drv_timing.inn.dat/SYS_TOP.fp.spr.gz (Created by Innovus v21.18-s099_1 on Tue Jun 16 05:03:23 2026, version: 1)
+Ending "Read special route file" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1089.4M, current mem=1089.4M)
+There are 55 nets with weight being set
+There are 55 nets with bottomPreferredRoutingLayer being set
+There are 79 nets with avoidDetour being set
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+% End Load floorplan data ... (date=06/16 11:58:39, total cpu=0:00:00.1, real=0:00:01.0, peak res=1090.2M, current mem=1090.2M)
+Reading congestion map file /home/user_74/projects/new_fp/floor_plan/saved_design/final_fix_drv_timing.inn.dat/SYS_TOP.route.congmap.gz ...
+% Begin Load SymbolTable ... (date=06/16 11:58:39, mem=1090.4M)
+Suppress "**WARN ..." messages.
+Un-suppress "**WARN ..." messages.
+% End Load SymbolTable ... (date=06/16 11:58:39, total cpu=0:00:00.0, real=0:00:00.0, peak res=1091.2M, current mem=1091.2M)
+Loading place ...
+% Begin Load placement data ... (date=06/16 11:58:39, mem=1091.2M)
+Reading placement file - /home/user_74/projects/new_fp/floor_plan/saved_design/final_fix_drv_timing.inn.dat/SYS_TOP.place.gz.
+** Reading stdCellPlacement_binary (Created by Innovus v21.18-s099_1 on Tue Jun 16 05:03:25 2026, version# 2) ...
+Read Views for adaptive view pruning ...
+Read 0 views from Binary DB for adaptive view pruning
+*** Checked 2 GNC rules.
+*** applyConnectGlobalNets disabled.
+*** Completed restorePlace (cpu=0:00:00.0 real=0:00:00.0 mem=1364.4M) ***
+Total net length = 2.953e+04 (1.519e+04 1.434e+04) (ext = 6.145e+02)
+% End Load placement data ... (date=06/16 11:58:39, total cpu=0:00:00.0, real=0:00:00.0, peak res=1092.7M, current mem=1092.6M)
+Reading PG file /home/user_74/projects/new_fp/floor_plan/saved_design/final_fix_drv_timing.inn.dat/SYS_TOP.pg.gz, version#2, (Created by Innovus v21.18-s099_1 on       Tue Jun 16 05:03:24 2026)
+*** Completed restorePGFile (cpu=0:00:00.0 real=0:00:01.0 mem=1361.4M) ***
+% Begin Load routing data ... (date=06/16 11:58:40, mem=1092.7M)
+Reading routing file - /home/user_74/projects/new_fp/floor_plan/saved_design/final_fix_drv_timing.inn.dat/SYS_TOP.route.gz.
+Reading Innovus routing data (Created by Innovus v21.18-s099_1 on Tue Jun 16 05:03:25 2026 Format: 20.1) ...
+*** Total 2330 nets are successfully restored.
+*** Completed restoreRoute (cpu=0:00:00.0 real=0:00:00.0 mem=1364.4M) ***
+% End Load routing data ... (date=06/16 11:58:40, total cpu=0:00:00.1, real=0:00:00.0, peak res=1096.7M, current mem=1095.7M)
+Loading Drc markers ...
+... 164 markers are loaded ...
+... 0 geometry drc markers are loaded ...
+... 0 antenna drc markers are loaded ...
+TAT_INFO: restoreCongMap REAL = 0 : CPU = 0 : MEM = 0.
+Reading property file /home/user_74/projects/new_fp/floor_plan/saved_design/final_fix_drv_timing.inn.dat/SYS_TOP.prop
+*** Completed restoreProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1367.4M) ***
+Reading dirtyarea snapshot file /home/user_74/projects/new_fp/floor_plan/saved_design/final_fix_drv_timing.inn.dat/SYS_TOP.db.da.gz (Create by Innovus v21.18-s099_1 on Tue Jun 16 05:03:25 2026, version: 4).
+Extraction setup Started 
+Initializing multi-corner RC extraction with 1 active RC Corners ...
+**WARN: (IMPEXT-6202):	In addition to the technology file, the capacitance table file is specified for all the RC corners. If the technology file  is already specified for all the RC corners, the capacitance table file is not required for preRoute and postRoute extraction. In a new session, the capacitance table files can be removed from the create_rc_corner command to enable the technology file to be used for preRoute and postRoute (effort level medium/high/signoff) extraction engines.
+Type 'man IMPEXT-6202' for more detail.
+Reading Capacitance Table File /home/user_74/projects/new_fp/floor_plan/saved_design/final_fix_drv_timing.inn.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl ...
+Cap table was created using Encounter 10.10-b056_1.
+Process name: cln28hpl_1p10m+alrdl_5x2yu2yz_typical.
+Set Shrink Factor to 0.90000
+Importing multi-corner RC tables ... 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: test_setup
+    RC-Corner Name        : typical
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/home/user_74/projects/new_fp/floor_plan/saved_design/final_fix_drv_timing.inn.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel medium)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel medium)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 	[Derived from postRoute_xcap (effortLevel medium)]
+    RC-Corner Technology file: '/home/user_74/projects/new_fp/floor_plan/saved_design/final_fix_drv_timing.inn.dat/libs/mmmc/typical/gpdk045.tch'
+ 
+ Analysis View: test_hold
+    RC-Corner Name        : typical
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/home/user_74/projects/new_fp/floor_plan/saved_design/final_fix_drv_timing.inn.dat/libs/mmmc/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel medium)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel medium)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 	[Derived from postRoute_xcap (effortLevel medium)]
+    RC-Corner Technology file: '/home/user_74/projects/new_fp/floor_plan/saved_design/final_fix_drv_timing.inn.dat/libs/mmmc/typical/gpdk045.tch'
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Creating RPSQ from WeeR and WRes ...
+The lower process node is set using setDesignMode and the technology file for TQuantus extraction specified. Therefore, the default value for PostRoute extraction mode's effortLevel(-effortLeveloption of the setExtractRCMode) changed from 'low' to 'medium'.
+Start generating vias ..
+#Skip building auto via since it is not turned on.
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+Via generation completed.
+% Begin Load power constraints ... (date=06/16 11:58:42, mem=1143.0M)
+'set_default_switching_activity' finished successfully.
+% End Load power constraints ... (date=06/16 11:58:42, total cpu=0:00:00.0, real=0:00:00.0, peak res=1149.5M, current mem=1149.5M)
+rc_typ
+% Begin load AAE data ... (date=06/16 11:58:42, mem=1194.9M)
+AAE DB initialization (MEM=1499.09 CPU=0:00:00.0 REAL=0:00:00.0) 
+% End load AAE data ... (date=06/16 11:58:43, total cpu=0:00:00.6, real=0:00:01.0, peak res=1200.3M, current mem=1200.3M)
+Restoring CCOpt config...
+  Extracting original clock gating for UART_RX_CLK...
+    clock_tree UART_RX_CLK contains 96 sinks and 0 clock gates.
+  Extracting original clock gating for UART_RX_CLK done.
+  Extracting original clock gating for UART_RX_CLK_generator_for_UART_TX_CLK<1>...
+    clock_tree UART_RX_CLK_generator_for_UART_TX_CLK<1> contains 37 sinks and 0 clock gates.
+  Extracting original clock gating for UART_RX_CLK_generator_for_UART_TX_CLK<1> done.
+  Found 1 generator input for clock tree UART_RX_CLK_generator_for_UART_TX_CLK<1>.
+  Extracting original clock gating for REF_CLK...
+    clock_tree REF_CLK contains 266 sinks and 1 clock gates.
+  Extracting original clock gating for REF_CLK done.
+  Extracting original clock gating for REF_CLK_generator_for_ALU_CLK<1>...
+    clock_tree REF_CLK_generator_for_ALU_CLK<1> contains 17 sinks and 0 clock gates.
+  Extracting original clock gating for REF_CLK_generator_for_ALU_CLK<1> done.
+  Found 1 generator input for clock tree REF_CLK_generator_for_ALU_CLK<1>.
+  The skew group ALU_CLK/sdc_test was created. It contains 17 sinks and 1 sources.
+  The skew group REF_CLK/sdc_test was created. It contains 265 sinks and 1 sources.
+  The skew group UART_RX_CLK/sdc_test was created. It contains 97 sinks and 1 sources.
+  The skew group UART_TX_CLK/sdc_test was created. It contains 35 sinks and 1 sources.
+  The skew group _clock_gen_REF_CLK_Latch_Out_reg/sdc_test was created. It contains 5 sinks and 1 sources.
+  The skew group _clock_gen_UART_RX_CLK_div_clk_reg/sdc_test was created. It contains 10 sinks and 1 sources.
+  The skew group REF_CLK/sdc_test was created. It contains 265 sinks and 1 sources.
+  The skew group UART_RX_CLK/sdc_test was created. It contains 97 sinks and 1 sources.
+  The skew group _clock_gen_REF_CLK_Latch_Out_reg/sdc_test was created. It contains 5 sinks and 1 sources.
+  The skew group _clock_gen_UART_RX_CLK_div_clk_reg/sdc_test was created. It contains 10 sinks and 1 sources.
+Restoring CCOpt config done.
+Total number of combinational cells: 318
+Total number of sequential cells: 152
+Total number of tristate cells: 10
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+Total number of physical cells: 0
+List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 CLKBUFX2 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+Total number of usable buffers: 16
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX4 CLKINVX3 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+Total number of usable inverters: 19
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+Total number of identified usable delay cells: 8
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+**WARN: (IMPCTE-107):	The following globals have been obsoleted since version . They will be removed in the next release. 
+timing_enable_separate_device_slew_effect_sensitivities
+#% End load design ... (date=06/16 11:58:43, total cpu=0:00:05.9, real=0:00:10.0, peak res=1225.5M, current mem=1205.9M)
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPLF-200            1  Pin '%s' in macro '%s' has no ANTENNAGAT...
+WARNING   IMPFP-3961           4  The techSite '%s' has no related standar...
+WARNING   IMPPTN-867           2  Found use of %s. This will continue to w...
+WARNING   IMPEXT-6202          1  In addition to the technology file, the ...
+WARNING   IMPOPT-3602          4  The specified path group name %s is not ...
+WARNING   NRIF-91              1  Option setNanoRouteMode -routeTopRouting...
+WARNING   IMPCTE-107           1  The following globals have been obsolete...
+WARNING   IMPTCM-77            1  Option "%s" for command %s is obsolete a...
+WARNING   IMPPSP-1003          2  Found use of '%s'. This will continue to...
+WARNING   TECHLIB-302          2  No function defined for cell '%s'. The c...
+*** Message Summary: 19 warning(s), 0 error(s)
+
+<CMD> fit
+<CMD> setLayerPreference violation -isVisible 0
+<CMD> timeDesign -postRoute
+*** timeDesign #1 [begin] : totSession cpu/real = 0:00:56.0/0:03:30.3 (0.3), mem = 2040.8M
+ Reset EOS DB
+Ignoring AAE DB Resetting ...
+#create default rule from bind_ndr_rule rule=0x7f45c47d1710 0x7f45c4904568
+Warning: term D of inst U0_RST_SYNC_RST_reg_reg[0] is not connect to global special net.
+Warning: term D of inst U1_RST_SYNC_RST_reg_reg[0] is not connect to global special net.
+**ERROR: All of the tie high/low terms are not connected to PG nets.#num needed restored net=0
+#need_extraction net=0 (total=2351)
+#Extract in post route mode
+#Finish check_net_pin_list step Enter extract_rc_in_nr_cmd
+#Fast data preparation for tQuantus.
+#Start routing data preparation on Tue Jun 16 11:59:25 2026
+#
+# Metal1       H   Track-Pitch = 0.19000    Line-2-Via Pitch = 0.13000
+# Metal2       V   Track-Pitch = 0.20000    Line-2-Via Pitch = 0.15000
+# Metal3       H   Track-Pitch = 0.19000    Line-2-Via Pitch = 0.15000
+# Metal4       V   Track-Pitch = 0.20000    Line-2-Via Pitch = 0.15000
+# Metal5       H   Track-Pitch = 0.19000    Line-2-Via Pitch = 0.15000
+# Metal6       V   Track-Pitch = 0.20000    Line-2-Via Pitch = 0.15000
+# Metal7       H   Track-Pitch = 0.19000    Line-2-Via Pitch = 0.15000
+# Metal8       V   Track-Pitch = 0.20000    Line-2-Via Pitch = 0.15000
+# Metal9       H   Track-Pitch = 0.19000    Line-2-Via Pitch = 0.15000
+# Metal10      V   Track-Pitch = 0.50000    Line-2-Via Pitch = 0.42000
+# Metal11      H   Track-Pitch = 0.47500    Line-2-Via Pitch = 0.43000
+#Regenerating Ggrids automatically.
+#Auto generating G-grids with size=15 tracks, using layer Metal3's pitch = 0.19000.
+#Using automatically generated G-grids.
+#Done routing data preparation.
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1492.24 (MB), peak = 1493.24 (MB)
+#Start routing data preparation on Tue Jun 16 11:59:25 2026
+#
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 0.900.
+#Voltage range [0.000 - 0.900] has 2349 nets.
+#Voltage range [0.900 - 0.900] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#Build and mark too close pins for the same net.
+#Bottom routing layer index=1(Metal1), bottom routing layer for shielding=1(Metal1), bottom shield layer=1(Metal1)
+#shield_bottom_stripe_layer=1(Metal1), shield_top_stripe_layer=5(Metal5)
+#pin_access_rlayer=2(Metal2)
+#shield_top_dpt_rlayer=-1 top_rlayer=5 top_trim_metal_rlayer=-1 rlayer_lowest=1 bottom_rlayer=1
+#enable_trim_layer_shield=F enable_dpt_layer_shield=F has_line_end_grid=F
+#Regenerating Ggrids automatically.
+#Auto generating G-grids with size=15 tracks, using layer Metal3's pitch = 0.19000.
+#Using automatically generated G-grids.
+#Done routing data preparation.
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 1508.09 (MB), peak = 1508.60 (MB)
+#
+#Start tQuantus RC extraction...
+#Start building rc corner(s)...
+#Number of RC Corner = 1
+#Corner typical /home/user_74/projects/new_fp/pdk_files/QRC_Tech/gpdk045.tch 25.000000 (real) 
+#(i=11, n=11 2000)
+#METAL_1 -> Metal1 (1)
+#METAL_2 -> Metal2 (2)
+#METAL_3 -> Metal3 (3)
+#METAL_4 -> Metal4 (4)
+#METAL_5 -> Metal5 (5)
+#METAL_6 -> Metal6 (6)
+#METAL_7 -> Metal7 (7)
+#METAL_8 -> Metal8 (8)
+#METAL_9 -> Metal9 (9)
+#METAL_10 -> Metal10 (10)
+#METAL_11 -> Metal11 (11)
+#SADV-On
+# Corner(s) : 
+#typical [25.00]
+# Corner id: 0
+# Layout Scale: 1.000000
+# Has Metal Fill model: yes
+# Temperature was set
+# Temperature : 25.000000
+# Ref. Temp   : 25.000000
+#user defined extract_shrink_factor of 0.90 overrides the tech file layout scale of 1.00
+#SADV-Off
+#
+#layer[1] tech width 120 != ict width 133.0
+#
+#layer[1] tech spc 120 != ict spc 133.0
+#
+#layer[2] tech width 160 != ict width 177.0
+#
+#layer[2] tech spc 140 != ict spc 155.0
+#
+#layer[3] tech width 160 != ict width 177.0
+#
+#layer[3] tech spc 140 != ict spc 155.0
+#
+#layer[4] tech width 160 != ict width 177.0
+#
+#layer[4] tech spc 140 != ict spc 155.0
+#
+#layer[5] tech width 160 != ict width 177.0
+#
+#layer[5] tech spc 140 != ict spc 155.0
+#
+#layer[6] tech width 160 != ict width 177.0
+#
+#layer[6] tech spc 140 != ict spc 155.0
+#
+#layer[7] tech width 160 != ict width 177.0
+#
+#layer[7] tech spc 140 != ict spc 155.0
+#
+#layer[8] tech width 160 != ict width 177.0
+#
+#layer[8] tech spc 140 != ict spc 155.0
+#
+#layer[9] tech width 160 != ict width 177.0
+#
+#layer[9] tech spc 140 != ict spc 155.0
+#
+#layer[10] tech width 440 != ict width 488.0
+#
+#layer[10] tech spc 400 != ict spc 444.0
+#
+#layer[11] tech width 440 != ict width 488.0
+#
+#layer[11] tech spc 400 != ict spc 444.0
+#total pattern=286 [11, 792]
+#Reading previously stored rc_model file ( /home/user_74/projects/new_fp/floor_plan/saved_design/final_fix_drv_timing.inn.dat/libs/misc/rc_model.bin ) ...
+#found CAPMODEL /home/user_74/projects/new_fp/pdk_files/QRC_Tech/gpdk045.tch
+#found RESMODEL /home/user_74/projects/new_fp/pdk_files/QRC_Tech/gpdk045.tch 25.000000 
+#number model r/c [1,1] [11,792] read
+#0 rcmodel(s) requires rebuild
+#Build RC corners: cpu time = 00:00:01, elapsed time = 00:00:01, memory = 1531.14 (MB), peak = 1539.89 (MB)
+#Finish check_net_pin_list step Enter extract
+#Start init net ripin tree building
+#Finish init net ripin tree building
+#Cpu time = 00:00:00
+#Elapsed time = 00:00:00
+#Increased memory = 0.00 (MB)
+#Total memory = 1531.16 (MB)
+#Peak memory = 1539.89 (MB)
+#begin processing metal fill model file
+#end processing metal fill model file
+#Length limit = 200 pitches
+#opt mode = 2
+#Finish check_net_pin_list step Fix net pin list
+#Start generate extraction boxes.
+#
+#Extract using 30 x 30 Hboxes
+#3x3 initial hboxes
+#Use area based hbox pruning.
+#0/0 hboxes pruned.
+#Complete generating extraction boxes.
+#Extract 4 hboxes with single thread on machine with  Xeon 2.20GHz 14080KB Cache 40CPU...
+#Process 0 special clock nets for rc extraction
+#Total 2325 nets were built. 46 nodes added to break long wires. 0 net(s) have incomplete routes.
+#Run Statistics for Extraction:
+#   Cpu time = 00:00:01, elapsed time = 00:00:01 .
+#   Increased memory =    52.48 (MB), total memory =  1584.61 (MB), peak memory =  1584.63 (MB)
+#Register nets and terms for rcdb /tmp/innovus_temp_247438_vlsi_user_74_qLgssu/nr247438_IZtREi.rcdb.d
+#Finish registering nets and terms for rcdb.
+#Simplify RC tree: cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1558.82 (MB), peak = 1584.64 (MB)
+#RC Statistics: 11587 Res, 6158 Ground Cap, 2345 XCap (Edge to Edge)
+#RC V/H edge ratio: 0.37, Avg V/H Edge Length: 2945.58 (6117), Avg L-Edge Length: 8177.00 (3814)
+#Nets and terms are pre-registered for rcdb /tmp/innovus_temp_247438_vlsi_user_74_qLgssu/nr247438_IZtREi.rcdb.d.
+#Start writing RC data.
+#Finish writing RC data
+#Finish writing rcdb with 13971 nodes, 11646 edges, and 4692 xcaps
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1555.89 (MB), peak = 1584.64 (MB)
+Restoring parasitic data from file '/tmp/innovus_temp_247438_vlsi_user_74_qLgssu/nr247438_IZtREi.rcdb.d' ...
+Reading RCDB with compressed RC data.
+Reading RCDB with compressed RC data.
+Begin read_parasitics... (cpu: 0:00:00.0 real: 0:00:00.0 mem: 2160.359M)
+Following multi-corner parasitics specified:
+	/tmp/innovus_temp_247438_vlsi_user_74_qLgssu/nr247438_IZtREi.rcdb.d (rcdb)
+Reading RCDB with compressed RC data.
+		Cell SYS_TOP has rcdb /tmp/innovus_temp_247438_vlsi_user_74_qLgssu/nr247438_IZtREi.rcdb.d specified
+Cell SYS_TOP, hinst 
+Reading RCDB with compressed RC data.
+Done read_parasitics... (cpu: 0:00:00.6 real: 0:00:00.0 mem: 2160.359M)
+#
+#Restore RCDB.
+#
+#Complete tQuantus RC extraction.
+#Cpu time = 00:00:03
+#Elapsed time = 00:00:04
+#Increased memory = 48.22 (MB)
+#Total memory = 1556.32 (MB)
+#Peak memory = 1584.64 (MB)
+#
+#46 inserted nodes are removed
+#Restored 0 tie nets, 0 tie snets, 0 partial nets
+#Start Inst Signature in MT(0)
+#Start Net Signature in MT(21311029)
+#Calculate SNet Signature in MT (61468696)
+#Run time and memory report for RC extraction:
+#RC extraction running on  Xeon 2.20GHz 14080KB Cache 40CPU.
+#Run Statistics for snet signature:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =     0.01 (MB), total memory =  1558.87 (MB), peak memory =  1584.64 (MB)
+#Run Statistics for Net Final Signature:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =     0.00 (MB), total memory =  1558.86 (MB), peak memory =  1584.64 (MB)
+#Run Statistics for Net launch:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =     0.03 (MB), total memory =  1558.86 (MB), peak memory =  1584.64 (MB)
+#Run Statistics for Net init_dbsNet_slist:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =     0.00 (MB), total memory =  1558.83 (MB), peak memory =  1584.64 (MB)
+#Run Statistics for net signature:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =     0.04 (MB), total memory =  1558.86 (MB), peak memory =  1584.64 (MB)
+#Run Statistics for inst signature:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =    -0.51 (MB), total memory =  1558.82 (MB), peak memory =  1584.64 (MB)
+Starting delay calculation for Setup views
+AAE_INFO: opIsDesignInPostRouteState() is 1
+AAE_INFO: resetNetProps viewIdx 0 
+Starting SI iteration 1 using Infinite Timing Windows
+#################################################################################
+# Design Stage: PostRoute
+# Design Name: SYS_TOP
+# Design Mode: 45nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: SPEF/RCDB 
+# Signoff Settings: SI On 
+#################################################################################
+AAE_INFO: 1 threads acquired from CTE.
+Start delay calculation (fullDC) (1 T). (MEM=2192.04)
+Reading RCDB with compressed RC data.
+Total number of fetched objects 2327
+AAE_INFO-618: Total number of nets in the design is 2351,  99.0 percent of the nets selected for SI analysis
+**WARN: (IMPESI-3140):	Bumpy transitions may exist in the design which may lead to inaccurate delay computation. To report/analyze the nets having bumpy transition, please enable delay report and use command 'report_noise -bumpy_waveform -threshold 0' after timing analysis. Delay report is enabled by setting 'set_si_mode -enable_delay_report true' before timing analysis.
+Type 'man IMPESI-3140' for more detail.
+Total number of fetched objects 2327
+AAE_INFO-618: Total number of nets in the design is 2351,  99.0 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2337.77 CPU=0:00:00.9 REAL=0:00:01.0)
+End delay calculation (fullDC). (MEM=2301.15 CPU=0:00:01.1 REAL=0:00:01.0)
+Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 2325.2M)
+Add other clocks and setupCteToAAEClockMapping during iter 1
+Loading CTE timing window is completed (CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 2325.2M)
+Starting SI iteration 2
+Start delay calculation (fullDC) (1 T). (MEM=2273.27)
+Glitch Analysis: View test_setup -- Total Number of Nets Skipped = 0. 
+Glitch Analysis: View test_setup -- Total Number of Nets Analyzed = 0. 
+Total number of fetched objects 2327
+AAE_INFO-618: Total number of nets in the design is 2351,  2.1 percent of the nets selected for SI analysis
+Total number of fetched objects 2327
+AAE_INFO-618: Total number of nets in the design is 2351,  2.1 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2323.49 CPU=0:00:00.1 REAL=0:00:01.0)
+End delay calculation (fullDC). (MEM=2323.49 CPU=0:00:00.1 REAL=0:00:01.0)
+*** Done Building Timing Graph (cpu=0:00:02.2 real=0:00:02.0 totSessionCpu=0:01:03 mem=2347.5M)
+**ERROR: (IMPSP-365):	Design has inst(s) with SITE 'CoreSiteDouble', but the floorplan has no rows defined for this site. Any locations found for such insts will be illegal; create rows for this site to avoid this.
+
+------------------------------------------------------------------
+          timeDesign Summary
+------------------------------------------------------------------
+
+Setup views included:
+ test_setup 
+
++--------------------+---------+---------+---------+---------+---------+---------+
+|     Setup mode     |   all   | reg2reg | in2reg  | reg2out | in2out  | default |
++--------------------+---------+---------+---------+---------+---------+---------+
+|           WNS (ns):|  0.183  |  0.183  | 96.556  |  7.690  |   N/A   |  1.506  |
+|           TNS (ns):|  0.000  |  0.000  |  0.000  |  0.000  |   N/A   |  0.000  |
+|    Violating Paths:|    0    |    0    |    0    |    0    |   N/A   |    0    |
+|          All Paths:|  1176   |  1172   |    4    |    3    |   N/A   |    1    |
++--------------------+---------+---------+---------+---------+---------+---------+
+
++----------------+-------------------------------+------------------+
+|                |              Real             |       Total      |
+|    DRVs        +------------------+------------+------------------|
+|                |  Nr nets(terms)  | Worst Vio  |  Nr nets(terms)  |
++----------------+------------------+------------+------------------+
+|   max_cap      |      0 (0)       |   0.000    |      0 (0)       |
+|   max_tran     |      0 (0)       |   0.000    |      0 (0)       |
+|   max_fanout   |      0 (0)       |     0      |      0 (0)       |
+|   max_length   |      0 (0)       |     0      |      0 (0)       |
++----------------+------------------+------------+------------------+
+
+**ERROR: (IMPSP-365):	Design has inst(s) with SITE 'CoreSiteDouble', but the floorplan has no rows defined for this site. Any locations found for such insts will be illegal; create rows for this site to avoid this.
+Density: 69.526%
+------------------------------------------------------------------
+**ERROR: (IMPSP-365):	Design has inst(s) with SITE 'CoreSiteDouble', but the floorplan has no rows defined for this site. Any locations found for such insts will be illegal; create rows for this site to avoid this.
+Reported timing to dir ./timingReports
+Total CPU time: 7.84 sec
+Total Real time: 11.0 sec
+Total Memory Usage: 2464.078125 Mbytes
+Reset AAE Options
+*** timeDesign #1 [finish] : cpu/real = 0:00:07.8/0:00:10.6 (0.7), totSession cpu/real = 0:01:03.9/0:03:41.0 (0.3), mem = 2464.1M
+<CMD> timeDesign -postRoute -hold
+*** timeDesign #2 [begin] : totSession cpu/real = 0:01:05.0/0:03:47.0 (0.3), mem = 2464.1M
+ Reset EOS DB
+Ignoring AAE DB Resetting ...
+#Start Inst Signature in MT(0)
+#Start Net Signature in MT(21311029)
+#Calculate SNet Signature in MT (61468696)
+#Run time and memory report for RC extraction:
+#RC extraction running on  Xeon 2.20GHz 14080KB Cache 40CPU.
+#Run Statistics for snet signature:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =     0.03 (MB), total memory =  1658.27 (MB), peak memory =  1659.50 (MB)
+#Run Statistics for Net Final Signature:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =     0.00 (MB), total memory =  1658.23 (MB), peak memory =  1659.50 (MB)
+#Run Statistics for Net launch:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =     0.00 (MB), total memory =  1658.23 (MB), peak memory =  1659.50 (MB)
+#Run Statistics for Net init_dbsNet_slist:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =     0.00 (MB), total memory =  1658.23 (MB), peak memory =  1659.50 (MB)
+#Run Statistics for net signature:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =     0.00 (MB), total memory =  1658.23 (MB), peak memory =  1659.50 (MB)
+#Run Statistics for inst signature:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =    -0.91 (MB), total memory =  1658.23 (MB), peak memory =  1659.50 (MB)
+The design is extracted. Skipping TQuantus.
+**ERROR: (IMPSP-365):	Design has inst(s) with SITE 'CoreSiteDouble', but the floorplan has no rows defined for this site. Any locations found for such insts will be illegal; create rows for this site to avoid this.
+OPTC: user 20.0
+Starting delay calculation for Hold views
+AAE_INFO: opIsDesignInPostRouteState() is 1
+AAE_INFO: resetNetProps viewIdx 1 
+Starting SI iteration 1 using Infinite Timing Windows
+#################################################################################
+# Design Stage: PostRoute
+# Design Name: SYS_TOP
+# Design Mode: 45nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: SPEF/RCDB 
+# Signoff Settings: SI On 
+#################################################################################
+AAE_INFO: 1 threads acquired from CTE.
+Start delay calculation (fullDC) (1 T). (MEM=2418.36)
+*** Calculating scaling factor for fast libraries using the default operating condition of each library.
+Reading RCDB with compressed RC data.
+Total number of fetched objects 2327
+AAE_INFO-618: Total number of nets in the design is 2351,  99.0 percent of the nets selected for SI analysis
+Total number of fetched objects 2327
+AAE_INFO-618: Total number of nets in the design is 2351,  99.0 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2466.18 CPU=0:00:00.9 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=2466.18 CPU=0:00:01.0 REAL=0:00:01.0)
+Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 2490.2M)
+Add other clocks and setupCteToAAEClockMapping during iter 1
+Loading CTE timing window is completed (CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 2490.2M)
+Starting SI iteration 2
+Start delay calculation (fullDC) (1 T). (MEM=2434.3)
+Glitch Analysis: View test_hold -- Total Number of Nets Skipped = 0. 
+Glitch Analysis: View test_hold -- Total Number of Nets Analyzed = 0. 
+Total number of fetched objects 2327
+AAE_INFO-618: Total number of nets in the design is 2351,  24.1 percent of the nets selected for SI analysis
+Total number of fetched objects 2327
+AAE_INFO-618: Total number of nets in the design is 2351,  1.6 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2485.52 CPU=0:00:00.3 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=2485.52 CPU=0:00:00.3 REAL=0:00:00.0)
+*** Done Building Timing Graph (cpu=0:00:02.2 real=0:00:02.0 totSessionCpu=0:01:07 mem=2509.5M)
+
+------------------------------------------------------------------
+          timeDesign Summary
+------------------------------------------------------------------
+
+Hold views included:
+ test_hold 
+
++--------------------+---------+---------+---------+---------+---------+---------+
+|     Hold mode      |   all   | reg2reg | in2reg  | reg2out | in2out  | default |
++--------------------+---------+---------+---------+---------+---------+---------+
+|           WNS (ns):|  0.000  |  0.000  |  0.460  |  2.441  |   N/A   |  0.069  |
+|           TNS (ns):|  0.000  |  0.000  |  0.000  |  0.000  |   N/A   |  0.000  |
+|    Violating Paths:|    0    |    0    |    0    |    0    |   N/A   |    0    |
+|          All Paths:|  1174   |  1172   |    4    |    1    |   N/A   |    1    |
++--------------------+---------+---------+---------+---------+---------+---------+
+
+**ERROR: (IMPSP-365):	Design has inst(s) with SITE 'CoreSiteDouble', but the floorplan has no rows defined for this site. Any locations found for such insts will be illegal; create rows for this site to avoid this.
+Density: 69.526%
+------------------------------------------------------------------
+**ERROR: (IMPSP-365):	Design has inst(s) with SITE 'CoreSiteDouble', but the floorplan has no rows defined for this site. Any locations found for such insts will be illegal; create rows for this site to avoid this.
+Reported timing to dir ./timingReports
+Total CPU time: 2.79 sec
+Total Real time: 3.0 sec
+Total Memory Usage: 2399.792969 Mbytes
+Reset AAE Options
+*** timeDesign #2 [finish] : cpu/real = 0:00:02.8/0:00:02.8 (1.0), totSession cpu/real = 0:01:07.8/0:03:49.8 (0.3), mem = 2399.8M

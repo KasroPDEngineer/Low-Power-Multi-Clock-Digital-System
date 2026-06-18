@@ -1,0 +1,156 @@
+if {![namespace exists ::IMEX]} { namespace eval ::IMEX {} }
+set ::IMEX::dataVar [file dirname [file normalize [info script]]]
+set ::IMEX::libVar ${::IMEX::dataVar}/libs
+
+catch { setDesignMode -flowEffort standard }
+catch { setDesignMode -process 45 }
+catch { setDesignMode -topRoutingLayer 5 }
+catch { setAnalysisMode -analysisType onChipVariation }
+catch { setAnalysisMode -checkType setup }
+catch { setAnalysisMode -clkSrcPath true }
+catch { setAnalysisMode -clockPropagation sdcControl }
+catch { setAnalysisMode -cppr both }
+catch { setAnalysisMode -skew true }
+catch { setAnalysisMode -timeBorrowing false }
+catch { setOptMode -activeHoldViews { test_hold } }
+catch { setOptMode -activeSetupViews { test_setup } }
+catch { setOptMode -addInstancePrefix route_design_hold }
+catch { setOptMode -autoHoldViews { test_hold} }
+catch { setOptMode -autoSetupViews { test_setup} }
+catch { setOptMode -autoTDGRSetupViews { test_setup} }
+catch { setOptMode -autoViewHoldTargetSlack 0 }
+catch { setOptMode -deleteInst true }
+catch { setOptMode -drcMargin 0 }
+catch { setOptMode -expBufferingTatEnhancement true }
+catch { setOptMode -expGlsTATFix true }
+catch { setOptMode -expNewStandardFlow true }
+catch { setOptMode -expRebufferRATATFix true }
+catch { setOptMode -expRoiFlowTatEnhancements true }
+catch { setOptMode -expTvp low }
+catch { setOptMode -extremeCCOptTATEnhancementV2 true }
+catch { setOptMode -fixDrc true }
+catch { setOptMode -fixFanoutLoad true }
+catch { setOptMode -fixGlitch true }
+catch { setOptMode -fixSIAttacker false }
+catch { setOptMode -maxLength 500 }
+catch { setOptMode -optimizeFF true }
+catch { setOptMode -preserveAllSequential false }
+catch { setOptMode -setupTargetSlack 0.2999 }
+catch { setOptMode -simplifyNetlist false }
+catch { setOptMode -usefulSkew false }
+catch { setOptMode -usefulSkewPreCTS false }
+catch { setPathGroupOptions default -late -slackAdjustment -0 }
+catch { setPathGroupOptions reg2reg -effortLevel high }
+catch { setPathGroupOptions reg2reg -late -slackAdjustment -0 }
+catch { setPathGroupOptions reg2out -effortLevel high }
+catch { setPathGroupOptions reg2out -late -slackAdjustment 0 }
+catch { setPathGroupOptions in2reg -effortLevel high }
+catch { setPathGroupOptions in2reg -late -slackAdjustment 0 }
+catch { setPathGroupOptions in2out -effortLevel high }
+catch { setPathGroupOptions in2out -late -slackAdjustment -0 }
+catch { setExtractRCMode  -effortLevel medium -engine postRoute -total_c_th 0 -relative_c_th 1 -coupling_c_th 0.1 }
+catch { set_ccopt_mode -integration native }
+catch { set_ccopt_mode -is_mode_set_route_top_mask false }
+catch { set_ccopt_mode -is_mode_set_route_top_preferred_extra_space false }
+catch {setNanoRouteMode -quiet -drouteAntennaFactor 1.000000}
+catch {setNanoRouteMode -quiet -droutePostRouteSpreadWire "auto"}
+catch {setNanoRouteMode -quiet -drouteStartIteration 0}
+catch {setNanoRouteMode -quiet -drouteUseLefPinTaperRule true}
+catch {setNanoRouteMode -quiet -drouteUseMinSpacingForBlockage auto}
+catch {setNanoRouteMode -quiet -extractDesignSignature 119879886}
+catch {setNanoRouteMode -quiet -extractRcModelFile "${::IMEX::libVar}/misc/rc_model.bin"}
+catch {setNanoRouteMode -quiet -extractThirdPartyCompatible false}
+catch {setNanoRouteMode -quiet -grouteExpTdStdDelay 38.800000}
+catch {setNanoRouteMode -quiet -grouteExpTdUseTifTimingEngineForImportDesign false}
+catch {setNanoRouteMode -quiet -routeInsertAntennaDiode true}
+catch {setNanoRouteMode -quiet -routeStrictlyHonorNonDefaultRule "false"}
+catch {setNanoRouteMode -quiet -routeTopRoutingLayer 5}
+catch {setNanoRouteMode -quiet -routeWithSiPostRouteFix false}
+catch {setNanoRouteMode -quiet -routeWithTimingDriven true}
+catch {setNanoRouteMode -quiet -timingEngine ".timing_file_178730.tif.gz"}
+
+catch { setPlaceMode -place_global_clock_gate_aware true }
+catch { setPlaceMode -place_global_cong_effort high }
+catch { setPlaceMode -place_global_ignore_scan true }
+catch { setPlaceMode -place_global_ignore_spare true }
+catch { setPlaceMode -place_global_max_density 0.9 }
+catch { setPlaceMode -place_global_module_aware_spare false }
+catch { setPlaceMode -place_global_reorder_scan true }
+catch { setPlaceMode -place_global_uniform_density true }
+catch { setPlaceMode -place_opt_run_global_place full }
+catch { setPlaceMode -softGuide true }
+catch { setIlmMode -keepHighFanoutPorts true -keepLoopBack false -keepInstInSdc false -keepFlatten true }
+catch { set_ccopt_mode -integration native }
+catch { set_ccopt_mode -is_mode_set_route_top_mask false }
+catch { set_ccopt_mode -is_mode_set_route_top_preferred_extra_space false }
+catch { setActiveLogicViewMode -keepHighFanoutCriticalInsts false }
+catch { setSrouteMode -viaConnectToShape {padring ring stripe} }
+catch { setDelayCalMode -enable_high_fanout true }
+catch { setDelayCalMode -engine aae }
+catch { setDelayCalMode -ignoreNetLoad false }
+catch { setDelayCalMode -SIAware true }
+catch { setDelayCalMode -signOff true }
+catch { setDelayCalMode -socv_accuracy_mode low }
+catch { setPinAssignMode -maxLayer 5 }
+catch { setPinAssignMode -pinEditInBatch false }
+catch { setAddRingMode -avoid_short false }
+catch { setAddRingMode -extend_over_row false }
+catch { setAddRingMode -ignore_rows false }
+catch { setAddRingMode -orthogonal_only true }
+catch { setAddRingMode -ring_target default }
+catch { setAddRingMode -skip_crossing_trunks none }
+catch { setAddRingMode -skip_via_on_pin standardcell }
+catch { setAddRingMode -skip_via_on_wire_shape noshape }
+catch { setAddRingMode -stacked_via_bottom_layer Metal1 }
+catch { setAddRingMode -stacked_via_top_layer Metal11 }
+catch { setAddRingMode -via_using_exact_crossover_size true }
+catch { setCheckMode -all true }
+catch { setCheckMode -extraction true }
+catch { setCheckMode -floorplan true }
+catch { setCheckMode -globalNet true }
+catch { setCheckMode -integrity true }
+catch { setCheckMode -io true }
+catch { setCheckMode -library true }
+catch { setCheckMode -mgrid true }
+catch { setCheckMode -netlist true }
+catch { setCheckMode -placement true }
+catch { setCheckMode -route true }
+catch { setCheckMode -sroute true }
+catch { setCheckMode -tapeOut true }
+catch { setCheckMode -timingGraph true }
+catch { setCheckMode -vcellnetlist true }
+catch { setHierMode -disableArt false }
+catch { setHierMode -reportPostRouteArtTiming false }
+catch { setHierMode -trialRouteHonorReadOnly false }
+catch { setImportMode -discardFloatingVNets false }
+catch { setImportMode -keepEmptyModule true }
+catch { setSIMode -separate_delta_delay_on_data true }
+catch { setAddStripeMode -allow_jog {padcore_ring block_ring} }
+catch { setAddStripeMode -break_at none }
+catch { setAddStripeMode -extend_to_closest_target none }
+catch { setAddStripeMode -ignore_block_check false }
+catch { setAddStripeMode -ignore_nondefault_domains false }
+catch { setAddStripeMode -orthogonal_only true }
+catch { setAddStripeMode -partial_set_thru_domain false }
+catch { setAddStripeMode -route_over_rows_only false }
+catch { setAddStripeMode -rows_without_stripes_only false }
+catch { setAddStripeMode -skip_via_on_pin standardcell }
+catch { setAddStripeMode -skip_via_on_wire_shape noshape }
+catch { setAddStripeMode -spacing_from_block 0 }
+catch { setAddStripeMode -spacing_type edge_to_edge }
+catch { setAddStripeMode -split_vias false }
+catch { setAddStripeMode -stacked_via_bottom_layer Metal1 }
+catch { setAddStripeMode -stacked_via_top_layer Metal11 }
+catch { setAddStripeMode -stop_at_last_wire_for_area false }
+catch { setAddStripeMode -stripe_min_length stripe_width }
+catch { setAddStripeMode -trim_antenna_back_to_shape none }
+catch { setAddStripeMode -via_using_exact_crossover_size false }
+catch { setRouteMode -earlyGlobalMaxRouteLayer 5 }
+catch { setRouteMode -earlyGlobalMinRouteLayer 2 }
+catch { setRouteMode -earlyGlobalRouteSecondPG false }
+catch { setFPlanMode -cellsForExtraSites {} }
+catch { setFPlanMode -defaultTechSite CoreSite }
+catch { setFPlanMode -extraSites {} }
+catch { setFPlanMode -maxIoHeight false }
+catch { setFPlanMode -place_check_ignore_fixed_cell_list {} }
+catch { setFPlanMode -powerRailLayer {} }
